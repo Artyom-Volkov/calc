@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keyWidth="25%p"
+    android:keyHeight="11%p" >
+    <Row>
+        <Key android:codes="34" android:keyLabel="Пред.операция" android:keyEdgeFlags="left"  android:keyWidth="50%p"/>
+        <Key android:codes="35" android:keyLabel="След.операция" android:keyEdgeFlags="right"  android:keyWidth="50%p"/>
+    </Row>
+    <Row>
+        <Key android:codes="25" android:keyLabel="log" android:keyEdgeFlags="left"/>
+        <Key android:codes="26" android:keyLabel="exp"/>
+        <Key android:codes="27" android:keyLabel="x^y"/>
+        <Key android:codes="28" android:keyLabel="n!" android:keyEdgeFlags="right"/>
+    </Row>
+    <Row>
+        <Key android:codes="29" android:keyLabel="sin" android:keyEdgeFlags="left" />
+        <Key android:codes="30" android:keyLabel="cos" />
+        <Key android:codes="31" android:keyLabel="tan" />
+        <Key android:codes="33" android:keyLabel="=" android:keyEdgeFlags="right" />
+    </Row>
+    <Row>
+        <Key android:codes="32" android:keyLabel="\u21d0" android:keyWidth="100%p"/>
+    </Row>
+
+</Keyboard>

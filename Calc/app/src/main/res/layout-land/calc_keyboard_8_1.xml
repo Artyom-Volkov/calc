@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:keyWidth="20%p"
+    android:keyHeight="11%p">
+    <Row>
+        <Key android:codes="6" android:keyLabel="6" android:keyEdgeFlags="left"/>
+        <Key android:codes="7" android:keyLabel="7"/>
+        <Key android:codes="21" android:keyLabel="+" android:keyWidth="30%p"/>
+        <Key android:codes="22" android:keyLabel="-" android:keyWidth="30%p" android:keyEdgeFlags="right"/>
+    </Row>
+    <Row>
+        <Key android:codes="4" android:keyLabel="4" android:keyEdgeFlags="left"/>
+        <Key android:codes="5" android:keyLabel="5"/>
+        <Key android:codes="23" android:keyLabel="*" android:keyWidth="30%p"/>
+        <Key android:codes="24" android:keyLabel="/" android:keyWidth="30%p" android:keyEdgeFlags="right"/>
+
+    </Row>
+    <Row>
+        <Key android:codes="2" android:keyLabel="2" android:keyEdgeFlags="left"/>
+        <Key android:codes="3" android:keyLabel="3"/>
+        <Key android:codes="27" android:keyLabel="x^y" android:keyWidth="30%p"/>
+        <Key android:codes="33" android:keyLabel="=" android:keyWidth="30%p" android:keyEdgeFlags="right"/>
+
+    </Row>
+    <Row>
+        <Key android:codes="0" android:keyLabel="0" android:keyEdgeFlags="left"/>
+        <Key android:codes="1" android:keyLabel="1"/>
+        <Key android:codes="18" android:keyLabel="+/-"/>
+        <Key android:codes="17" android:keyLabel="OCT" />
+        <Key android:codes="19" android:keyLabel="DEL" android:keyEdgeFlags="right"/>
+    </Row>
+    <Row>
+        <Key android:codes="20" android:keyLabel="\u21d2" android:keyWidth="100%p"/>
+    </Row>
+
+</Keyboard>

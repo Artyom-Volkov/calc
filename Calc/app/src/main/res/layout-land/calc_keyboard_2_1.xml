@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:keyWidth="33.33%p"
+    android:keyHeight="11%p">
+
+    <Row>
+        <Key android:codes="21" android:keyLabel="+" android:keyWidth="25%p" android:keyEdgeFlags="left"/>
+        <Key android:codes="22" android:keyLabel="-" android:keyWidth="25%p"/>
+        <Key android:codes="23" android:keyLabel="*" android:keyWidth="25%p"/>
+        <Key android:codes="24" android:keyLabel="/" android:keyWidth="25%p" android:keyEdgeFlags="right"/>
+    </Row>
+    <Row>
+        <Key android:codes="1" android:keyLabel="1" android:keyEdgeFlags="left"/>
+        <Key android:codes="0" android:keyLabel="0" />
+        <Key android:codes="33" android:keyLabel="=" android:keyEdgeFlags="right"/>
+    </Row>
+    <Row>
+        <Key android:codes="18" android:keyLabel="+/-" android:keyEdgeFlags="left" />
+        <Key android:codes="17" android:keyLabel="BIN"/>
+        <Key android:codes="19" android:keyLabel="DEL" android:keyEdgeFlags="right" />
+    </Row>
+    <Row>
+        <Key android:codes="20" android:keyLabel="\u21d2" android:keyWidth="100%p"/>
+    </Row>
+
+</Keyboard>
