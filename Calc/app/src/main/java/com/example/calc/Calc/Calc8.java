@@ -1,7 +1,11 @@
-package com.example.calc.OctNumberSystem;
+package com.example.calc.Calc;
 
 import android.content.Context;
 import android.widget.TextView;
+
+import com.example.calc.CalcHistory.CalcHistory2_8_16;
+import com.example.calc.MathExpression.MathExpression_2_8_16;
+import com.example.calc.MathExpression.NumberSystem;
 
 /**
  * Created by Артём on 22.08.2018.
@@ -11,11 +15,11 @@ public class Calc8
 {
     public TextView m_calcDialogDisplay;
     public TextView m_calcHistoryDisplay;
-    private MathExpression8 m_currentmathExpression;
+    private MathExpression_2_8_16 m_currentmathExpression;
     private boolean m_NeedClearDialogDisplay;
 
     private Context m_context;
-    private CalcHistory8 m_calcHistory8;
+    private CalcHistory2_8_16 m_calcHistory8;
 
     public Calc8(Context context)
     {
@@ -25,8 +29,8 @@ public class Calc8
 
     public void Initialize()
     {
-        m_calcHistory8 = new CalcHistory8();
-        m_currentmathExpression = new MathExpression8(m_context);
+        m_calcHistory8 = new CalcHistory2_8_16(NumberSystem.OCT);
+        m_currentmathExpression = new MathExpression_2_8_16(m_context, NumberSystem.OCT);
         m_NeedClearDialogDisplay = true;
         if (m_calcDialogDisplay!=null)
             m_calcDialogDisplay.setText("");
@@ -101,9 +105,9 @@ public class Calc8
     }
     public void Input_ADD()
     {
-        if (m_NeedClearDialogDisplay == false && (m_currentmathExpression.mathOperandSet == MathExpression8.MathOperandSet.OneOperandSet))
+        if (m_NeedClearDialogDisplay == false && (m_currentmathExpression.getMathOperandSet() == MathExpression_2_8_16.MathOperandSet.OneOperandSet))
             Input_EQUALS();
-        m_currentmathExpression.AddOperation(MathExpression8.MathOperation.ADD);
+        m_currentmathExpression.AddOperation(MathExpression_2_8_16.MathOperation.ADD);
 
         if (m_currentmathExpression.NeedAddOperand())
         {
@@ -124,9 +128,9 @@ public class Calc8
     }
     public void Input_SUBTRACT()
     {
-        if (m_NeedClearDialogDisplay == false && (m_currentmathExpression.mathOperandSet == MathExpression8.MathOperandSet.OneOperandSet))
+        if (m_NeedClearDialogDisplay == false && (m_currentmathExpression.getMathOperandSet() == MathExpression_2_8_16.MathOperandSet.OneOperandSet))
             Input_EQUALS();
-        m_currentmathExpression.AddOperation(MathExpression8.MathOperation.SUBTRACT);
+        m_currentmathExpression.AddOperation(MathExpression_2_8_16.MathOperation.SUBTRACT);
 
         if (m_currentmathExpression.NeedAddOperand())
         {
@@ -145,9 +149,9 @@ public class Calc8
     }
     public void Input_MULTIPLY()
     {
-        if (m_NeedClearDialogDisplay == false && (m_currentmathExpression.mathOperandSet == MathExpression8.MathOperandSet.OneOperandSet))
+        if (m_NeedClearDialogDisplay == false && (m_currentmathExpression.getMathOperandSet() == MathExpression_2_8_16.MathOperandSet.OneOperandSet))
             Input_EQUALS();
-        m_currentmathExpression.AddOperation(MathExpression8.MathOperation.MULTIPLY);
+        m_currentmathExpression.AddOperation(MathExpression_2_8_16.MathOperation.MULTIPLY);
 
         if (m_currentmathExpression.NeedAddOperand())
         {
@@ -166,9 +170,9 @@ public class Calc8
     }
     public void Input_DIVISION()
     {
-        if (m_NeedClearDialogDisplay == false && (m_currentmathExpression.mathOperandSet == MathExpression8.MathOperandSet.OneOperandSet))
+        if (m_NeedClearDialogDisplay == false && (m_currentmathExpression.getMathOperandSet() == MathExpression_2_8_16.MathOperandSet.OneOperandSet))
             Input_EQUALS();
-        m_currentmathExpression.AddOperation(MathExpression8.MathOperation.DIVISION);
+        m_currentmathExpression.AddOperation(MathExpression_2_8_16.MathOperation.DIVISION);
         if (m_currentmathExpression.NeedAddOperand())
         {
             if (m_NeedClearDialogDisplay == true )
@@ -194,7 +198,7 @@ public class Calc8
         m_NeedClearDialogDisplay = true;
 
         m_calcHistory8.AddMathExpression(m_currentmathExpression, m_calcHistoryDisplay);
-        m_currentmathExpression = new MathExpression8(m_context);
+        m_currentmathExpression = new MathExpression_2_8_16(m_context, NumberSystem.OCT);
     }
     public void Input_SINGCHANGE()
     {
@@ -208,7 +212,7 @@ public class Calc8
         }
         else
         {
-            m_currentmathExpression.AddOperation(MathExpression8.MathOperation.SINGCHANGE);
+            m_currentmathExpression.AddOperation(MathExpression_2_8_16.MathOperation.SINGCHANGE);
             if (m_NeedClearDialogDisplay == true )
             {
                 if (!m_calcHistory8.IsEmply())
@@ -224,14 +228,14 @@ public class Calc8
             m_NeedClearDialogDisplay = true;
 
             m_calcHistory8.AddMathExpression(m_currentmathExpression, m_calcHistoryDisplay);
-            m_currentmathExpression = new MathExpression8(m_context);
+            m_currentmathExpression = new MathExpression_2_8_16(m_context, NumberSystem.OCT);
         }
     }
     public void Input_LOG()
     {
-        if (m_NeedClearDialogDisplay == false && (m_currentmathExpression.mathOperandSet == MathExpression8.MathOperandSet.OneOperandSet))
+        if (m_NeedClearDialogDisplay == false && (m_currentmathExpression.getMathOperandSet() == MathExpression_2_8_16.MathOperandSet.OneOperandSet))
             Input_EQUALS();
-        m_currentmathExpression.AddOperation(MathExpression8.MathOperation.LOG);
+        m_currentmathExpression.AddOperation(MathExpression_2_8_16.MathOperation.LOG);
         if (m_NeedClearDialogDisplay == true )
         {
             if (!m_calcHistory8.IsEmply())
@@ -247,13 +251,13 @@ public class Calc8
         m_NeedClearDialogDisplay = true;
 
         m_calcHistory8.AddMathExpression(m_currentmathExpression, m_calcHistoryDisplay);
-        m_currentmathExpression = new MathExpression8(m_context);
+        m_currentmathExpression = new MathExpression_2_8_16(m_context, NumberSystem.OCT);
     }
     public void Input_EXP()
     {
-        if (m_NeedClearDialogDisplay == false && (m_currentmathExpression.mathOperandSet == MathExpression8.MathOperandSet.OneOperandSet))
+        if (m_NeedClearDialogDisplay == false && (m_currentmathExpression.getMathOperandSet() == MathExpression_2_8_16.MathOperandSet.OneOperandSet))
             Input_EQUALS();
-        m_currentmathExpression.AddOperation(MathExpression8.MathOperation.EXP);
+        m_currentmathExpression.AddOperation(MathExpression_2_8_16.MathOperation.EXP);
         if (m_NeedClearDialogDisplay == true )
         {
             if (!m_calcHistory8.IsEmply())
@@ -269,13 +273,13 @@ public class Calc8
         m_NeedClearDialogDisplay = true;
 
         m_calcHistory8.AddMathExpression(m_currentmathExpression, m_calcHistoryDisplay);
-        m_currentmathExpression = new MathExpression8(m_context);
+        m_currentmathExpression = new MathExpression_2_8_16(m_context, NumberSystem.OCT);
     }
     public void Input_POW()
     {
-        if (m_NeedClearDialogDisplay == false && (m_currentmathExpression.mathOperandSet == MathExpression8.MathOperandSet.OneOperandSet))
+        if (m_NeedClearDialogDisplay == false && (m_currentmathExpression.getMathOperandSet() == MathExpression_2_8_16.MathOperandSet.OneOperandSet))
             Input_EQUALS();
-        m_currentmathExpression.AddOperation(MathExpression8.MathOperation.POW);
+        m_currentmathExpression.AddOperation(MathExpression_2_8_16.MathOperation.POW);
 
         if (m_currentmathExpression.NeedAddOperand())
         {
@@ -294,9 +298,9 @@ public class Calc8
     }
     public void Input_FACTORIAL()
     {
-        if (m_NeedClearDialogDisplay == false && (m_currentmathExpression.mathOperandSet == MathExpression8.MathOperandSet.OneOperandSet))
+        if (m_NeedClearDialogDisplay == false && (m_currentmathExpression.getMathOperandSet() == MathExpression_2_8_16.MathOperandSet.OneOperandSet))
             Input_EQUALS();
-        m_currentmathExpression.AddOperation(MathExpression8.MathOperation.FACTORIAL);
+        m_currentmathExpression.AddOperation(MathExpression_2_8_16.MathOperation.FACTORIAL);
         long operand;
         if (m_NeedClearDialogDisplay == true )
         {
@@ -316,13 +320,13 @@ public class Calc8
         m_NeedClearDialogDisplay = true;
 
         m_calcHistory8.AddMathExpression(m_currentmathExpression, m_calcHistoryDisplay);
-        m_currentmathExpression = new MathExpression8(m_context);
+        m_currentmathExpression = new MathExpression_2_8_16(m_context, NumberSystem.OCT);
     }
     public void Input_SIN()
     {
-        if (m_NeedClearDialogDisplay == false && (m_currentmathExpression.mathOperandSet == MathExpression8.MathOperandSet.OneOperandSet))
+        if (m_NeedClearDialogDisplay == false && (m_currentmathExpression.getMathOperandSet() == MathExpression_2_8_16.MathOperandSet.OneOperandSet))
             Input_EQUALS();
-        m_currentmathExpression.AddOperation(MathExpression8.MathOperation.SIN);
+        m_currentmathExpression.AddOperation(MathExpression_2_8_16.MathOperation.SIN);
         if (m_NeedClearDialogDisplay == true )
         {
             if (!m_calcHistory8.IsEmply())
@@ -338,13 +342,13 @@ public class Calc8
         m_NeedClearDialogDisplay = true;
 
         m_calcHistory8.AddMathExpression(m_currentmathExpression, m_calcHistoryDisplay);
-        m_currentmathExpression = new MathExpression8(m_context);
+        m_currentmathExpression = new MathExpression_2_8_16(m_context, NumberSystem.OCT);
     }
     public void Input_COS()
     {
-        if (m_NeedClearDialogDisplay == false && (m_currentmathExpression.mathOperandSet == MathExpression8.MathOperandSet.OneOperandSet))
+        if (m_NeedClearDialogDisplay == false && (m_currentmathExpression.getMathOperandSet() == MathExpression_2_8_16.MathOperandSet.OneOperandSet))
             Input_EQUALS();
-        m_currentmathExpression.AddOperation(MathExpression8.MathOperation.COS);
+        m_currentmathExpression.AddOperation(MathExpression_2_8_16.MathOperation.COS);
         if (m_NeedClearDialogDisplay == true )
         {
             if (!m_calcHistory8.IsEmply())
@@ -360,13 +364,13 @@ public class Calc8
         m_NeedClearDialogDisplay = true;
 
         m_calcHistory8.AddMathExpression(m_currentmathExpression, m_calcHistoryDisplay);
-        m_currentmathExpression = new MathExpression8(m_context);
+        m_currentmathExpression = new MathExpression_2_8_16(m_context, NumberSystem.OCT);
     }
     public void Input_TAN()
     {
-        if (m_NeedClearDialogDisplay == false && (m_currentmathExpression.mathOperandSet == MathExpression8.MathOperandSet.OneOperandSet))
+        if (m_NeedClearDialogDisplay == false && (m_currentmathExpression.getMathOperandSet() == MathExpression_2_8_16.MathOperandSet.OneOperandSet))
             Input_EQUALS();
-        m_currentmathExpression.AddOperation(MathExpression8.MathOperation.TAN);
+        m_currentmathExpression.AddOperation(MathExpression_2_8_16.MathOperation.TAN);
         if (m_NeedClearDialogDisplay == true )
         {
             if (!m_calcHistory8.IsEmply())
@@ -383,7 +387,7 @@ public class Calc8
         m_NeedClearDialogDisplay = true;
 
         m_calcHistory8.AddMathExpression(m_currentmathExpression, m_calcHistoryDisplay);
-        m_currentmathExpression = new MathExpression8(m_context);
+        m_currentmathExpression = new MathExpression_2_8_16(m_context, NumberSystem.OCT);
     }
     public void Input_CalcHistory_BackwardHistory()
     {

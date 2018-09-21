@@ -3,10 +3,10 @@ package com.example.calc;
 import android.app.Fragment;
 import android.os.Bundle;
 
-import com.example.calc.BinNumberSystem.Calc2;
-import com.example.calc.DecimalNumberSystem.Calc10;
-import com.example.calc.HexNumberSystem.Calc16;
-import com.example.calc.OctNumberSystem.Calc8;
+import com.example.calc.Calc.Calc2;
+import com.example.calc.Calc.Calc10;
+import com.example.calc.Calc.Calc16;
+import com.example.calc.Calc.Calc8;
 
 /**
  * Created by Артём on 28.08.2018.

@@ -1,8 +1,11 @@
-package com.example.calc.DecimalNumberSystem;
+package com.example.calc.Calc;
 
 import android.content.Context;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.calc.CalcHistory.CalcHistory10;
+import com.example.calc.MathExpression.MathExpression10;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;

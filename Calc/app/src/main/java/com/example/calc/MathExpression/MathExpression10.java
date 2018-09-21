@@ -1,4 +1,4 @@
-package com.example.calc.DecimalNumberSystem;
+package com.example.calc.MathExpression;
 
 
 import android.content.Context;
@@ -11,11 +11,11 @@ import android.widget.Toast;
 
 public class MathExpression10
 {
-    enum MathOperation{NOT ,ADD, SUBTRACT, MULTIPLY, DIVISION, POW, SINGCHANGE, LOG, EXP, FACTORIAL, SIN, COS, TAN}
-    enum MathOperandSet{OperandNotSet, OneOperandSet, TwoOperandSet}
-    enum TypeMathExpression{NOTSET, WithOneOperand, WithTwoOperand}
+    public enum MathOperation{NOT ,ADD, SUBTRACT, MULTIPLY, DIVISION, POW, SINGCHANGE, LOG, EXP, FACTORIAL, SIN, COS, TAN}//
+    public enum MathOperandSet{OperandNotSet, OneOperandSet, TwoOperandSet}//
+    enum TypeMathExpression{NOTSET, WithOneOperand, WithTwoOperand}//
 
-    public double operand1, operand2, answer;
+    public double operand1, operand2, answer;//
     private String str_MathExpression;
     public MathOperation mathOperation;
     public MathOperandSet mathOperandSet;

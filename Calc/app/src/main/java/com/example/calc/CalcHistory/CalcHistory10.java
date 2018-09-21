@@ -1,6 +1,8 @@
-package com.example.calc.OctNumberSystem;
+package com.example.calc.CalcHistory;
 
 import android.widget.TextView;
+
+import com.example.calc.MathExpression.MathExpression10;
 
 import java.util.ArrayList;
 
@@ -8,18 +10,18 @@ import java.util.ArrayList;
  * Created by Артём on 23.08.2018.
  */
 
-public class CalcHistory8
+public class CalcHistory10
 {
-    public ArrayList<MathExpression8> mathExpressions;
+    public ArrayList<MathExpression10> mathExpressions;
     private int numberOfHistory;
 
-    public CalcHistory8()
+    public CalcHistory10()
     {
-        mathExpressions = new ArrayList<MathExpression8>();
+        mathExpressions = new ArrayList<MathExpression10>();
         numberOfHistory = -1;
     }
 
-    public void AddMathExpression(MathExpression8 mathExpression, TextView historyDisplay)
+    public void AddMathExpression(MathExpression10 mathExpression, TextView historyDisplay)
     {
         Delete_lastHistorys();
         mathExpressions.add(mathExpression);
@@ -27,7 +29,7 @@ public class CalcHistory8
         numberOfHistory++;
     }
 
-    public long GetLastAnswer()
+    public double GetLastAnswer()
     {
         return mathExpressions.get(numberOfHistory).answer;
     }
@@ -49,8 +51,7 @@ public class CalcHistory8
         for (int i = 0; i <= numberOfHistory; i++)
             historyDisplay.append("\n"+mathExpressions.get(i).toString());
         if (numberOfHistory < 0) return;
-        dialogDisplay.setText(Long.toOctalString(mathExpressions.get(numberOfHistory).answer));
-
+        dialogDisplay.setText(String.format("%.6f", mathExpressions.get(numberOfHistory).answer));
     }
 
     public void ForwardHistory(TextView historyDisplay, TextView dialogDisplay)
@@ -62,7 +63,7 @@ public class CalcHistory8
         for (int i = 0; i <= numberOfHistory; i++)
             historyDisplay.append("\n"+mathExpressions.get(i).toString());
         if (numberOfHistory < 0) return;
-        dialogDisplay.setText(Long.toOctalString(mathExpressions.get(numberOfHistory).answer));
+        dialogDisplay.setText(String.format("%.6f", mathExpressions.get(numberOfHistory).answer));
     }
 
     public boolean IsEmply(){ return numberOfHistory==-1;}

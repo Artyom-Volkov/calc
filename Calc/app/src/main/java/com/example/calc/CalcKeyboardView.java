@@ -8,10 +8,10 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.example.calc.BinNumberSystem.Calc2;
-import com.example.calc.DecimalNumberSystem.Calc10;
-import com.example.calc.HexNumberSystem.Calc16;
-import com.example.calc.OctNumberSystem.Calc8;
+import com.example.calc.Calc.Calc2;
+import com.example.calc.Calc.Calc10;
+import com.example.calc.Calc.Calc16;
+import com.example.calc.Calc.Calc8;
 
 /**
  * Created by Артём on 22.08.2018.
